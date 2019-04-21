@@ -314,7 +314,7 @@ export class EventService {
   getEvents() {
     let subject = new Subject();
     setTimeout(() => { subject.next(EVENTS); subject.complete(); },
-    3000);
+    100);
     return subject;
   }
   getEvent(id: number) {

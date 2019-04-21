@@ -13,6 +13,7 @@ import { NavBarComponent } from './nav/navbar.component';
 import { EventService } from './events/shared/event.service';
 import { RouterModule } from '@angular/router';
 import { Error404Component } from './errors/404.component';
+import { EventListResolver } from './events/event-list-resolver.service';
 @NgModule({
   imports: [
     BrowserModule,
@@ -31,6 +32,7 @@ import { Error404Component } from './errors/404.component';
     EventService,
     ToastrService,
     EventRouteActivator,
+    EventListResolver,
     {
       provide: 'canDeactivateCreateEvent',
       useValue: checkDirtyState
