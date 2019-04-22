@@ -26,6 +26,7 @@ import { IEvent } from './shared';
   `,
   styles: [
     `
+    .thumbnail { min-height: 210px }
     .green { color: #003300 !important }
     .bold { font-weight: bold; }
     .pad-left { margin-left: 10px }

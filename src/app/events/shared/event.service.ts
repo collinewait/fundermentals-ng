@@ -313,10 +313,16 @@ const EVENTS: IEvent[] = [
 @Injectable()
 export class EventService {
   getEvents(): Observable<IEvent[]> {
-    let subject = new Subject<IEvent[]> ();
+    const subject = new Subject<IEvent[]> ();
     setTimeout(() => { subject.next(EVENTS); subject.complete(); },
     100);
     return subject;
+  }
+
+  saveEvent(event) {
+    event.id = 999;
+    event.session = [];
+    EVENTS.push(event);
   }
   getEvent(id: number): IEvent {
     return EVENTS.find( event => event.id === id);
