@@ -3,7 +3,9 @@ import { appRoutes } from './routes';
 import {
   TOASTR_TOKEN, Toastr,
   JQ_TOKEN,
-  CollapsibleWellComponent
+  CollapsibleWellComponent,
+  SimpleModalComponent,
+  ModalTriggerDirective
  } from './common';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -47,13 +49,19 @@ declare let $: any;
     CreateSessionComponent,
     SessionListComponent,
     CollapsibleWellComponent,
-    DurationPipe
+    DurationPipe,
+    SimpleModalComponent,
+    ModalTriggerDirective
   ],
   providers: [
     EventService,
     {
       provide: TOASTR_TOKEN,
       useValue: toastr
+    },
+    {
+      provide: JQ_TOKEN,
+      useValue: $
     },
     EventRouteActivator,
     EventListResolver,
