@@ -1,6 +1,10 @@
 import { AuthService } from './user/auth.service';
 import { appRoutes } from './routes';
-import { TOASTR_TOKEN, Toastr } from './common/toastr.service';
+import {
+  TOASTR_TOKEN, Toastr,
+  JQ_TOKEN,
+  CollapsibleWellComponent
+ } from './common';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -20,10 +24,11 @@ import { EventsAppComponent } from './events-app.component';
 import { NavBarComponent } from './nav/navbar.component';
 import { RouterModule } from '@angular/router';
 import { Error404Component } from './errors/404.component';
-import { CollapsibleWellComponent } from './common/collapsible-well.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+//let toastr: Toastr = window['toastr'];
 declare let toastr: Toastr;
+declare let $: any;
 @NgModule({
   imports: [
     BrowserModule,
