@@ -22,7 +22,9 @@ import {
   SessionListComponent,
   DurationPipe,
   UpVoteComponent,
-  VoterService
+  VoterService,
+  LocationValidator
+
 } from './events';
 import { EventsAppComponent } from './events-app.component';
 import { NavBarComponent } from './nav/navbar.component';
@@ -55,7 +57,8 @@ const $ = window['$'];
     DurationPipe,
     SimpleModalComponent,
     ModalTriggerDirective,
-    UpVoteComponent
+    UpVoteComponent,
+    LocationValidator
   ],
   providers: [
     EventService,

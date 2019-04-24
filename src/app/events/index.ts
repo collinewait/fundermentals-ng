@@ -4,3 +4,4 @@ export * from './event-thumbnail.component';
 export * from './events-list.component';
 export * from './shared';
 export * from './event-details';
+export * from './location-validator.directive';
