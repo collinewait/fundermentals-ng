@@ -31,6 +31,7 @@ import { NavBarComponent } from './nav/navbar.component';
 import { RouterModule } from '@angular/router';
 import { Error404Component } from './errors/404.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 const toastr: Toastr = window['toastr'];
 // declare let toastr: Toastr; caused Error: Cannot find module './user/user.module'
@@ -41,7 +42,8 @@ const $ = window['$'];
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    HttpClientModule,
   ],
   declarations: [
     EventsAppComponent,
