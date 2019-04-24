@@ -21,7 +21,8 @@ import {
   CreateSessionComponent,
   SessionListComponent,
   DurationPipe,
-  UpVoteComponent
+  UpVoteComponent,
+  VoterService
 } from './events';
 import { EventsAppComponent } from './events-app.component';
 import { NavBarComponent } from './nav/navbar.component';
@@ -69,6 +70,7 @@ const $ = window['$'];
     EventRouteActivator,
     EventListResolver,
     AuthService,
+    VoterService,
     {
       provide: 'canDeactivateCreateEvent',
       useValue: checkDirtyState
