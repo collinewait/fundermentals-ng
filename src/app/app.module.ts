@@ -17,7 +17,7 @@ import {
   EventService,
   EventDetailsComponent,
   CreateEventComponent,
-  EventRouteActivator,
+  EventResolver,
   EventListResolver,
   CreateSessionComponent,
   SessionListComponent,
@@ -72,7 +72,7 @@ const $ = window['$'];
       provide: JQ_TOKEN,
       useValue: $
     },
-    EventRouteActivator,
+    EventResolver,
     EventListResolver,
     AuthService,
     VoterService,

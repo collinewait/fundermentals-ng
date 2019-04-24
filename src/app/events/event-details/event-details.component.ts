@@ -22,10 +22,8 @@ export class EventDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.params.forEach((params: Params) => {
-      this.eventService.getEvent(+params.id).subscribe((event: IEvent) => {
-        this.event = event;
-        this.resetState();
-      });
+      this.event = this.route.snapshot.data.event;
+      this.resetState();
     });
   }
 
