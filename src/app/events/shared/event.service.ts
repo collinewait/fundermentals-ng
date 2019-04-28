@@ -331,11 +331,6 @@ export class EventService {
       .pipe(catchError(this.handleError<IEvent>('saveEvent')));
   }
 
-  updateEvent(event) {
-    const index = EVENTS.findIndex(x => x.id = event.id);
-    EVENTS[index] = event;
-  }
-
   searchSessions(searchTerm: string) {
     const term = searchTerm.toLocaleLowerCase();
     let results: ISession[] = [];
