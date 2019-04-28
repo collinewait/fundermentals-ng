@@ -7,7 +7,7 @@ import { Component, Input, OnChanges } from '@angular/core';
   selector: 'session-list',
   templateUrl: 'session-list.component.html'
 })
-export class SessionListComponent implements OnChanges{
+export class SessionListComponent implements OnChanges {
   @Input() sessions: ISession[];
   @Input() filterBy: string;
   @Input() sortBy: string;

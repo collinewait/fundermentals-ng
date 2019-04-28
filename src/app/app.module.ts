@@ -33,9 +33,9 @@ import { RouterModule } from '@angular/router';
 import { Error404Component } from './errors/404.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-const toastr: Toastr = window['toastr'];
+const toastr: Toastr = window.toastr;
 // declare let toastr: Toastr; caused Error: Cannot find module './user/user.module'
-const $ = window['$'];
+const $ = window.$;
 // declare let $: any;  caused Error: Cannot find module './user/user.module'
 @NgModule({
   imports: [

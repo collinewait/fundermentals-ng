@@ -15,11 +15,11 @@ describe('SessionListComponent', () => {
   let debugEl: DebugElement;
 
   beforeEach(async(() => {
-    let mockAuthService = {
+    const mockAuthService = {
       isAuthenticated: () => true,
       currentUser: { username: 'joe'}
     };
-    let mockVoterService = { userHasVoted: () => true};
+    const mockVoterService = { userHasVoted: () => true};
 
     TestBed.configureTestingModule({
       imports: [],

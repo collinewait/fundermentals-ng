@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
   <router-outlet></router-outlet>
   `
 })
-export class EventsAppComponent implements OnInit{
+export class EventsAppComponent implements OnInit {
   constructor(private auth: AuthService) {}
 
   ngOnInit() {
