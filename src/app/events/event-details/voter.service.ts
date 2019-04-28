@@ -7,9 +7,14 @@ import { Observable, of } from 'rxjs';
 @Injectable()
 export class VoterService {
   constructor(private http: HttpClient) {}
-  deleteVoter(session: ISession, voterName: string) {
+  deleteVoter(eventId: number, session: ISession, voterName: string) {
     session.voters = session.voters
       .filter(voter => voter !== voterName);
+
+    const url = `/api/events/${eventId}/sessions/${session.id}/voters/${voterName}`;
+    this.http.delete(url)
+      .pipe(catchError(this.handleError('deleteVote')))
+      .subscribe();
   }
 
   addVoter(eventId: number, session: ISession, voterName: string) {
