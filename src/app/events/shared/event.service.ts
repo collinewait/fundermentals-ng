@@ -2,7 +2,7 @@ import { Injectable, EventEmitter } from '@angular/core';
 import { Subject, Observable, of } from 'rxjs';
 import { IEvent, ISession } from './event.modal';
 import { catchError } from 'rxjs/operators';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 
 const EVENTS: IEvent[] = [
@@ -326,9 +326,9 @@ export class EventService {
   }
 
   saveEvent(event) {
-    event.id = 999;
-    event.session = [];
-    EVENTS.push(event);
+    const options = { headers: new HttpHeaders({ContentType: 'application/json'}) };
+    return this.http.post<IEvent>('/api/events', event, options)
+      .pipe(catchError(this.handleError<IEvent>('saveEvent')));
   }
 
   updateEvent(event) {
