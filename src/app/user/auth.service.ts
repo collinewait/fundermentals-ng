@@ -44,4 +44,10 @@ export class AuthService {
     const options = { headers: new HttpHeaders({'Content-Type': 'application/json'}) };
     return this.http.put(`/api/users/${this.currentUser.id}`, this.currentUser, options);
   }
+
+  logout() {
+    this.currentUser = undefined;
+    const options = { headers: new HttpHeaders({'Content-Type': 'application/json'}) };
+    return this.http.post('/api/logout', {}, options);
+  }
 }
