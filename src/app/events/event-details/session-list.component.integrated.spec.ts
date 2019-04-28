@@ -6,6 +6,7 @@ import { SessionListComponent } from './session-list.component';
 import { ComponentFixture, async, TestBed } from '@angular/core/testing';
 import { DebugElement } from '@angular/core';
 import { DurationPipe } from '../shared';
+import { By } from '@angular/platform-browser';
 
 describe('SessionListComponent', () => {
   let fixture: ComponentFixture<SessionListComponent>;
@@ -57,7 +58,8 @@ describe('SessionListComponent', () => {
       component.ngOnChanges();
       fixture.detectChanges();
 
-      expect(element.querySelector('[well-title]').textContent).toContain('session 1');
+      // expect(element.querySelector('[well-title]').textContent).toContain('session 1');
+      expect(debugEl.query(By.css('[well-title]')).nativeElement.textContent).toContain('session 1');
     });
   });
 });
